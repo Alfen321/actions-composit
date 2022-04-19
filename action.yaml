@@ -1,0 +1,15 @@
+name: 'k8s Deployment'
+description: >
+  jsut some testing
+inputs:
+  environment:
+    description: 'Hard requirement on which environment to use'
+    required: false
+  image:
+    description: "Image name. Defaults to repository name"
+    required: false
+runs:
+  using: 'composite'
+  steps:
+    - run: test.sh
+      shell: bash
