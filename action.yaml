@@ -8,8 +8,13 @@ inputs:
   image:
     description: "Image name. Defaults to repository name"
     required: false
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.testscript.outputs.testscript }}
 runs:
   using: 'composite'
   steps:
-    - run: test.sh
+    - id: testscript
+      run: echo "::set-output name=testscript::$(test.sh)"
       shell: bash
