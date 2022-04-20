@@ -16,5 +16,5 @@ runs:
   using: 'composite'
   steps:
     - id: testscript
-      run: echo "::set-output name=testscript::$(${{GITHUB_ACTION_REPOSITORY}}/test.sh)"
+      run: echo "::set-output name=testscript::$(test.sh)"
       shell: bash
